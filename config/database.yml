@@ -6,6 +6,8 @@ default: &default
   port: <%= ENV.fetch("DB_PORT") { "5432" } %>
   user: <%= ENV.fetch("POSTGRES_USER") { nil } %>
   password: <%= ENV.fetch("POSTGRES_PASSWORD") { nil } %>
+  sslmode: <%= ENV.fetch("DB_SSLMODE") { "require" } %>
+  sslrootcert: <%= ENV.fetch("DB_SSLROOTCERT") { "ca.pem" } %>
 
 development:
   <<: *default
